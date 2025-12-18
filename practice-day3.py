@@ -24,4 +24,19 @@ def switch_case(case):
     return switcher.get(case, "Invalid case")
 case_number = 2
 print(switch_case(case_number))
+
+# dictionary practice
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+for key, value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+
+my_dict['d'] = 4
+print("Updated Dictionary:", my_dict)
+
+my_dict.pop('b')
+print("Dictionary after removing 'b':", my_dict)
+
+my_dict.clear()
+print("Cleared Dictionary:", my_dict)
+
 print("----------- End of Day 3 -----------------")
