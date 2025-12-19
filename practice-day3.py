@@ -39,4 +39,22 @@ print("Dictionary after removing 'b':", my_dict)
 my_dict.clear()
 print("Cleared Dictionary:", my_dict)
 
+# list practice
+my_list = [1, 2, 3, 4, 5]
+for item in my_list:
+    print("List item:", item)
+    
+my_list.append(6)
+print("Updated List:", my_list)
+
+my_list.remove(3)
+print("List after removing 3:", my_list)
+my_list.sort(reverse=True)
+print("Sorted List in descending order:", my_list)
+
+my_list.reverse()
+print("Reversed List:", my_list)
+
+print("Index of 4 in List:", my_list.index(4))
+
 print("----------- End of Day 3 -----------------")
