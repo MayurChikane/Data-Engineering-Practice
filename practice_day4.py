@@ -31,4 +31,35 @@ print("Is 4 in Set?", 4 in my_set)
 my_set.clear()
 print("Cleared Set:", my_set)
 
+# list map with lambda
+data = [1, 2, 3, 4, 5]
+squared_data = list(map(lambda x: x * x, data))
+print("Squared Data using map and lambda:", squared_data)
+
+# high-order functions
+def apply_function(func, value):
+    return func(value)
+result = apply_function(lambda x: x + 10, 5)
+print("Result of applying function:", result)
+
+def outer_function(msg):
+    def inner_function():
+        return f"Inner says: {msg}"
+    return inner_function
+inner = outer_function("Hello from inside!")
+print(inner())
+
+# Exception handling
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print("Caught an exception:", e)
+
+# File operations
+with open("sample.txt", "w") as file:
+    file.write("This is a sample file.\nDay 4 practice.")
+with open("sample.txt", "r") as file:
+    content = file.read()
+    print("File Content:\n", content)
+
 print("----------- End of Day 4 -----------------")
