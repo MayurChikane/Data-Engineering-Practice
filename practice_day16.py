@@ -100,4 +100,19 @@ person = Person(name='Alice', age=30)
 print(person.name)  # Output: Alice
 print(person.age)   # Output: 30
 
+# 8. Abstract Base Classes
+from abc import ABC, abstractmethod
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+rectangle = Rectangle(5, 10)
+print(rectangle.area())  # Output: 50
+
 print("--------------End of Day 16 Practice--------------")
