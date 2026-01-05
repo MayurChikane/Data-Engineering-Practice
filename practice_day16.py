@@ -115,4 +115,18 @@ class Rectangle(Shape):
 rectangle = Rectangle(5, 10)
 print(rectangle.area())  # Output: 50
 
+# 9. Mixins
+class JsonMixin:
+    def to_json(self):
+        import json
+        return json.dumps(self.__dict__)
+class User(JsonMixin):
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
+user = User('john_doe', 'john@example.com')
+print(user.to_json())  # Output: {"username": "john_doe", "email": "john@example.com"}
+
+
+
 print("--------------End of Day 16 Practice--------------")
