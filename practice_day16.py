@@ -127,6 +127,15 @@ class User(JsonMixin):
 user = User('john_doe', 'john@example.com')
 print(user.to_json())  # Output: {"username": "john_doe", "email": "john@example.com"}
 
+#10. Slots
+class PointWithSlots:
+    __slots__ = ['x', 'y']
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+point_slots = PointWithSlots(1, 2)
+print(point_slots.x)  # Output: 1
+print(point_slots.y)  # Output: 2
 
 
 print("--------------End of Day 16 Practice--------------")
