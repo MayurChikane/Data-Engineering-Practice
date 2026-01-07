@@ -137,5 +137,33 @@ point_slots = PointWithSlots(1, 2)
 print(point_slots.x)  # Output: 1
 print(point_slots.y)  # Output: 2
 
+# 11. Descriptor Protocol
+class PositiveInteger:
+    def __get__(self, instance, owner):
+        return instance._value
+    def __set__(self, instance, value):
+        if value < 0:
+            raise ValueError("Value must be positive")
+        instance._value = value
+class Account:
+    balance = PositiveInteger()
+    def __init__(self, balance):
+        self.balance = balance
+account = Account(100)
+print(account.balance)  # Output: 100
+
+# 12. Context Managers
+class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.file.close()
+with FileManager('test.txt', 'w') as f:
+    f.write('Hello, World!')
+    
 
 print("--------------End of Day 16 Practice--------------")
