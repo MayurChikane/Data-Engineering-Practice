@@ -165,5 +165,17 @@ class FileManager:
 with FileManager('test.txt', 'w') as f:
     f.write('Hello, World!')
     
+# Anagram Code
+def are_anagrams(str1, str2):
+    return sorted(str1) == sorted(str2)
+print(are_anagrams("listen", "silent"))  # Output: True
+print(are_anagrams("hello", "world"))    # Output: False
+
+# Palindrome Code
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()
+    return s == s[::-1]
+print(is_palindrome("A man a plan a canal Panama"))  # Output: True
+print(is_palindrome("hello"))                          # Output: False
 
 print("--------------End of Day 16 Practice--------------")
