@@ -124,4 +124,58 @@ def play_game():
 play_game()
 
 
+
+# 8 Queen Gameplay
+N = 8
+
+def is_safe(board, row, col):
+    # Check column
+    for i in range(row):
+        if board[i] == col:
+            return False
+
+    # Check left diagonal
+    for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
+        if board[i] == j:
+            return False
+
+    # Check right diagonal
+    for i, j in zip(range(row - 1, -1, -1), range(col + 1, N)):
+        if board[i] == j:
+            return False
+
+    return True
+
+
+def solve_queens(board, row):
+    if row == N:
+        print_solution(board)
+        return True
+
+    for col in range(N):
+        if is_safe(board, row, col):
+            board[row] = col
+            solve_queens(board, row + 1)
+            board[row] = -1  # backtrack
+
+    return False
+
+
+def print_solution(board):
+    for i in range(N):
+        for j in range(N):
+            if board[i] == j:
+                print("Q", end=" ")
+            else:
+                print(".", end=" ")
+        print()
+    print("\n")
+
+
+# Driver code
+board = [-1] * N
+solve_queens(board, 0)
+
+
+
 print("----------------- End of Mini Projects -----------------")
