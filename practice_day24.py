@@ -46,3 +46,5 @@ def camera_app():
 
 if __name__ == "__main__":
     camera_app()
+
+print("------------------------ End of Practice Day 24 ------------------------")
