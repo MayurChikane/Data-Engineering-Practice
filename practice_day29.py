@@ -22,3 +22,5 @@ if __name__ == "__main__":
     app = create_flask_app()
     print("🚀 Starting Flask app on http://localhost:5000/")
     app.run(debug=True)
+
+print("-------------------------- End of Practice Day 29 --------------------------")
