@@ -13,7 +13,7 @@ def create_restful_app():
         id = db.Column(db.Integer, primary_key=True)
         username = db.Column(db.String(80), unique=True, nullable=False)
         password_hash = db.Column(db.String(120), nullable=False)
-    @app.before_first_request
+    @app.before_request
     def create_tables():
         db.create_all()
     @app.route('/register', methods=['POST'])
